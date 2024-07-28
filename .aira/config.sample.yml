@@ -1,0 +1,103 @@
+aira:
+  gaiah:  # 共通設定
+    run: true
+    repo:
+    #▼▼プロジェクト毎に書き換える場所です▼▼
+      repo_name: "WebSite"
+      description: ""
+      private: false
+    local:
+      #▼▼プロジェクト毎に書き換える場所です▼▼
+      repo_name: "WebSite"
+      repo_dir: "C:/Users/ttmak/MyApps/WebSite" 
+      no_initial_commit: false
+    commit:
+      commit_msg_path: ".aira/aira.Gaiah.md"
+      branch_name: null
+
+    dev:  # 開発時の設定 (必要に応じて上書き)
+      repo:
+        create_repo: false
+      local:
+        init_repo: false
+      commit:
+        process_commits: true
+
+    init:  # 初期化時の設定 (必要に応じて上書き)
+      repo:
+        create_repo: true
+      local:
+        init_repo: true
+      commit:
+        process_commits: false
+
+  llm:
+    model: "gemini/gemini-1.5-pro-latest"  # 利用するLLMモデル
+
+  repository_summary_output_dir: .aira  # リポジトリ概要の出力ディレクトリ
+  readme_prompt_template_path: .aira/readme_prompt_template.txt  # README生成のプロンプトテンプレートのパス
+  
+  harmon_ai:
+    run: true
+    environment:
+    #▼▼プロジェクト毎に書き換える場所です▼▼
+      repo_name: "WebSite"
+      owner_name: "Akihiro1028Bad"
+      #▼▼プロジェクト毎に書き換える場所です▼▼
+      package_name: "WebSite"
+      icon_url: ""
+      #https://huggingface.co/datasets/MakiAi/IconAssets/resolve/main/AIRA_SAMPLE2.png"
+      #▼▼プロジェクト毎に書き換える場所です▼▼
+      title: "WebSite"
+      subtitle: "～AI-Integrated Repository for Accelerated Development～"
+      website_url: "https://hamaruki.com/"
+      github_url: "https://github.com/Akihiro1028Bad"
+      twitter_url: "https://x.com/tsutsu_dev"
+      blog_url: ""
+
+    product:
+      important_message_file: "important_template.md"
+      sections_content_file: "sections_template.md"
+      output_file: "README_template.md"
+      cicd_file_path: "publish-to-pypi.yml"
+      cicd_main_path: "publish-to-pypi.yml"
+      github_cicd_dir: ".github/workflows"
+    
+    llm_product:
+      sections_content_file: "sections_template_llm.md"
+
+    development:
+      output_dir: ".aria/.harmon_ai"
+
+    main:
+    #▼▼プロジェクト毎に書き換える場所です▼▼
+      main_dir: "C:/Users/ttmak/MyApsp/WebSite"
+      replace_readme: true
+
+    instructions_prompt: .aira/instructions.md
+
+    #▼▼リポジトリ作成
+    #aira --mode=make --config=.aira\config.sample.yml
+
+    #全体像マークダウン取得 ファイル名Repository_summary.md
+    #１変更をステージに追加
+    #２コマンドを実行：sourcesage
+
+    #コミット指示具体的な手順
+    #１変更をステージに追加
+    #２SourceSageを実行し、差分情報を確認
+    #３LLMを使ってコミットメッセージを生成
+    #４生成されたメッセージを「.Gaiah.md」ファイルに保存
+    #５コマンドを実行：aira --mode=commit --config=.aira\config.sample.yml
+
+    #リリースノートの自動生成
+    #SourceSageを使えば、リリースノートを自動で生成できます。開発の進捗を簡単に可視化し、チーム内や顧客とのコミュニケーションを円滑にします。
+
+    #ポイント
+    #タグを適切に設定することが重要
+    #設定ファイル（.sourcesage_releasenotes.yml）の準備が必要
+    #具体的な手順
+    #最新のコミットにタグを設定（例：v0.1.0）
+    #設定ファイルを準備し、必要な情報を記入
+    #コマンドを実行：sourcesage --yaml-file=docs\.sourcesage_releasenotes.yml
+    #生成されたリリースノートを確認し、必要に応じて調整
